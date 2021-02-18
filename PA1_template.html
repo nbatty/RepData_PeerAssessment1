@@ -206,7 +206,7 @@ library(xtable)
 
 URL&lt;-&quot;https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;</code></pre>
 <p>Data for this analysis was obtained from the URL: <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip" class="uri">https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip</a></p>
-<p>Data was downloaded at <strong>Wed Feb 17 6:36:40 PM 2021</strong>, at which point this report was also generated.</p>
+<p>Data was downloaded at <strong>Wed Feb 17 6:45:01 PM 2021</strong>, at which point this report was also generated.</p>
 <p>Data was then tidied for analysis</p>
 <pre class="r"><code># Download, unzip, and read the data. Additionally, rename the columns
 download(URL, dest=&quot;./activity.zip&quot;, mode=&#39;wb&#39;)
@@ -339,7 +339,7 @@ rownames(meancomp)&lt;-c(&#39;Original data&#39;,&#39;Imputed data&#39;)
 mc&lt;-xtable(meancomp)
 print(mc, type=&quot;html&quot;)</code></pre>
 <!-- html table generated in R 4.0.3 by xtable 1.8-4 package -->
-<!-- Wed Feb 17 18:36:42 2021 -->
+<!-- Wed Feb 17 18:45:02 2021 -->
 <table border="1">
 <tr>
 <th>

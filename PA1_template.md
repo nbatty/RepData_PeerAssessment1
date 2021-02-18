@@ -26,7 +26,7 @@ URL<-"https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip"
 Data for this analysis was obtained from the URL: https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip
 
 
-Data was downloaded at **Wed Feb 17 6:36:40 PM 2021**, at which point this report was also generated.
+Data was downloaded at **Wed Feb 17 6:45:01 PM 2021**, at which point this report was also generated.
 
 Data was then tidied for analysis
 
@@ -98,7 +98,7 @@ OGActivity<-ggplot(means, aes(x=interval, y=means))+
 OGActivity
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](PA1_template_files/figure-html/Daily activity pattern-1.png)<!-- -->
 
 ```r
 #Calculate which interval has the highest mean step count
@@ -175,7 +175,7 @@ ImpPlot<-ggplot(sumsImp, aes(x=sumsImp))+
 ImpPlot
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-8-1.png)<!-- -->
+![](PA1_template_files/figure-html/Imputed data histogram-1.png)<!-- -->
 
 
 This can be directly compared with the original data which had a mean of **10766** and median of **10765**. A visual comparison is below. 
@@ -196,7 +196,7 @@ ImpPlot2<-ggplot(sumsImp, aes(x=sumsImp))+
 plot_grid(OGhist2, ImpPlot2, labels = "AUTO")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
+![](PA1_template_files/figure-html/both histograms-1.png)<!-- -->
 
 Imputing the data in this manner seems to have a minimal impact on the mean and median values, only slightly increasing the median.  
 
@@ -210,7 +210,7 @@ print(mc, type="html")
 ```
 
 <!-- html table generated in R 4.0.3 by xtable 1.8-4 package -->
-<!-- Wed Feb 17 18:36:42 2021 -->
+<!-- Wed Feb 17 18:45:02 2021 -->
 <table border=1>
 <tr> <th>  </th> <th> Mean </th> <th> Median </th>  </tr>
   <tr> <td align="right"> Original data </td> <td align="right"> 10766 </td> <td align="right"> 10765 </td> </tr>
@@ -265,6 +265,6 @@ wkendplot<-ggplot(means2, aes(x=interval, y=weekend))+
 plot_grid(wkendplot, wkdayplot, labels = NULL, nrow = 2, ncol = 1)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](PA1_template_files/figure-html/weekday vs weekend-1.png)<!-- -->
   
 As you can see by the plots above, during the weekend there appears to be a more even spread of activity throughout the day, whereas on weekdays there is a higher peak of activity, but lower activity throughout the day.

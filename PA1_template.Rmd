@@ -75,7 +75,7 @@ OGhist
 ## What is the average daily activity pattern?
 
 The average daily activity pattern can be seen below  
-```{r}
+```{r Daily activity pattern}
 means<-tapply(activity$StepsCount, activity$Time, mean, na.rm=T)
 
 interval<-c(as.character(unique(activity$Time)))
@@ -151,7 +151,7 @@ medianImpchar<-as.integer(medianImp)
 
 The mean number of steps taken each day is **`r meanImpchar`**, with a median of **`r medianImpchar`**.
 
-```{r}
+```{r Imputed data histogram}
 #Plot a *histogram* of total step count per day
 #The assignment makes a point of stating to NOT make a barplot
 ImpPlot<-ggplot(sumsImp, aes(x=sumsImp))+
@@ -164,7 +164,7 @@ ImpPlot
 
 
 This can be directly compared with the original data which had a mean of **`r meanchar`** and median of **`r medianchar`**. A visual comparison is below. 
-```{r, warning=FALSE}
+```{r both histograms, warning=FALSE}
 OGhist2<-ggplot(sums, aes(x=sums))+
         geom_histogram(color="black", fill="steelblue2", binwidth = 1000)+
         xlab("Total steps in a Day")+
@@ -196,7 +196,7 @@ print(mc, type="html")
 To determine this, initially a new variable must be added denoting the day of the week
 
 Then another column was added *(here called "Workday")*, that denoted whether the data in that row was taken on a weekday or a weekend. This factor variable was then used to compare the activity patterns between weekdays and weekends, as displayed below.   
-```{r}
+```{r weekday vs weekend}
 #Create a weekday factor column, in this case it was done Monday through Sunday
 DoW<-weekdays(activityImp$Date)
 activityImp<-cbind(activityImp, DoW)
